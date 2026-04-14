@@ -1,0 +1,15 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "credit-risk-scoring-api"
+version = "0.1.0"
+description = "Score repayment risk with transparent feature contributions and operations-friendly monitoring hooks."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
