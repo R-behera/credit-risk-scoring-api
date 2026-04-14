@@ -9,7 +9,8 @@
     "risk",
     "fintech"
   ],
-  "accent": "#264653",
+  "accent": "#c8582c",
+  "secondary_accent": "#a98e2c",
   "dashboard_metrics": [
     {
       "label": "Model Lift",
@@ -45,5 +46,52 @@
     "The primary value proposition is: Score repayment risk with transparent feature contributions and operations-friendly monitoring hooks.",
     "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
     "Typical stakeholders include analytics, operations, product, and leadership teams working on credit, risk, fintech."
+  ],
+  "app_archetype": "watchtower",
+  "ui_profile": {
+    "layout": "console",
+    "surface": "slate",
+    "font_stack": "\"Space Grotesk\", \"Segoe UI\", sans-serif",
+    "radius": 27,
+    "shadow": 63,
+    "eyebrow_style": "soft",
+    "module_columns": 3,
+    "hero_align": "center",
+    "headline_mode": "normal"
+  },
+  "app_modules": [
+    {
+      "label": "Signal 01",
+      "title": "Incident Prioritizer",
+      "description": "Simulate how incoming events are scored before they hit an operator queue.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Prioritize",
+      "prefill": "{\n  \"features\": {\n    \"engagement_score\": 53,\n    \"tenure_days\": 123,\n    \"payment_miss_count\": 3,\n    \"segment\": \"consumer\",\n    \"priority_flag\": true\n  }\n}",
+      "hint": "Risk band and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 02",
+      "title": "Alert Delta Review",
+      "description": "Compare current operating metrics with a baseline to explain what changed.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Compare Signals",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 22.7,\n    \"activation\": 27.5,\n    \"retention\": 42.4,\n    \"revenue\": 61.9\n  },\n  \"baseline\": {\n    \"acquisition\": 20.88,\n    \"activation\": 25.3,\n    \"retention\": 39.01,\n    \"revenue\": 56.95\n  }\n}",
+      "hint": "Operational movement summary will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 03",
+      "title": "Triage Playbook",
+      "description": "Generate an action-oriented response plan for the next incident handling step.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Build Playbook",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for Credit Risk Scoring API.\",\n  \"features\": {\n    \"engagement_score\": 53,\n    \"tenure_days\": 123,\n    \"payment_miss_count\": 3,\n    \"segment\": \"consumer\",\n    \"priority_flag\": true\n  },\n  \"metrics\": {\n    \"acquisition\": 22.7,\n    \"activation\": 27.5,\n    \"retention\": 42.4,\n    \"revenue\": 61.9\n  }\n}",
+      "hint": "Suggested next actions and rationale will appear here.",
+      "span": "wide"
+    }
   ]
 }
